@@ -24,6 +24,28 @@ public class MemberUpdateServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
 
+        String name = request.getParameter("name");
+        String userid = request.getParameter("userid");
+        String pwd = request.getParameter("pwd");
+        String email = request.getParameter("email");
+        String phone = request.getParameter("phone");
+        String admin = request.getParameter("admin");
+
+        MemberVO mVO = new MemberVO();
+        mVO.setName(name);
+        mVO.setUserid(userid);
+        mVO.setPwd(pwd);
+        mVO.setEmail(email);
+        mVO.setPhone(phone);
+        mVO.setAdmin(Integer.parseInt(admin));
+
+        MemberDAO mDAO = MemberDAO.getInstance();
+        int result = mDAO.updateMember(mVO);
+
+        if (result > 0){
+            response.sendRedirect("login.do");
+        }
     }
 }

@@ -42,7 +42,7 @@ function updateCheck(){
         frm.re_pwd.focus();
         return false;
     }
-    return false;
+    return true;
 }
 
 function idCheck(){

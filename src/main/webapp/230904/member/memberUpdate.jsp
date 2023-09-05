@@ -14,7 +14,7 @@
 </head>
 <body>
 <h3>회원 정보 수정</h3>
-<form method="post" name="frm" id="frm" action="/memberUpdate.do">
+<form method="post" name="frm" id="frm" action="memberUpdate.do">
     <label for="name">이름</label><span style="color:red;"> * </span>
     <input type="text" id="name" name="name" value="${mVO.name}" required><br>
 

@@ -12,7 +12,7 @@ import java.io.IOException;
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("src/main/webapp/230904/member/login.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("230904/member/login.jsp");
         dispatcher.forward(request, response);
     }
 
